@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_レイヤー_2" data-name="レイヤー 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 555 555">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #333;
+      }
+
+      .cls-1, .cls-2 {
+        stroke: #333;
+        stroke-miterlimit: 10;
+        stroke-width: 5px;
+      }
+
+      .cls-3 {
+        clip-path: url(#clippath);
+      }
+
+      .cls-4 {
+        stroke-width: 0px;
+      }
+
+      .cls-4, .cls-2 {
+        fill: none;
+      }
+    </style>
+    <clipPath id="clippath">
+      <circle class="cls-4" cx="278" cy="277" r="275"/>
+    </clipPath>
+  </defs>
+  <g id="path">
+    <g>
+      <g class="cls-3">
+        <g>
+          <path class="cls-2" d="M411.11,586s-26-78-50-105c-24-27-42-20-42-20,0,0-.5,23.5-39.5,20.5s-42-30-42-30c0,0-20,6-36,10s-54,34-56,105"/>
+          <path class="cls-2" d="M318.61,461.5c-29-18-8-28,0-30,28-3,113-12,97-168,0,0,56,30,27-41,0,0,42,30,2-52,0,0,15,12,10-7-5-19-36-90-97-76"/>
+          <path class="cls-2" d="M354.61,54.5s-20,5-18,18c0,0-17-38-29-18"/>
+          <path class="cls-2" d="M297.61,68.5s-85-46-169,48c0,0-15,22,5,13,0,0-32,23-33,47-1,24,10,7,10,7,0,0-30,48-8,43,0,0-14,21,0,31,0,0,15-11,32,3"/>
+          <path class="cls-2" d="M123.61,313.5s-23-7-5-24"/>
+          <path class="cls-2" d="M237.61,451.5s41,0,0-25c-33-7-79-31-94-91-88,13-59-73-41-78"/>
+          <path class="cls-2" d="M140.61,315.5s2,17,3,20"/>
+          <path class="cls-2" d="M415.61,263.5s-27-21-32-29c0,0-21,62-77-2,0,0-2,61-51,15,0,0-25,42-57,5,0,0-19,27-48,5"/>
+          <path class="cls-2" d="M252.61,273.5s-10-6-15,9"/>
+          <path class="cls-2" d="M255.61,291.5s-12-5-20,7"/>
+          <path class="cls-2" d="M359.61,288.5s-2-14-16-11"/>
+          <path class="cls-2" d="M351.61,299.5s-5-11-16-7"/>
+          <ellipse class="cls-1" cx="339.11" cy="308.5" rx="5.5" ry="7"/>
+          <ellipse class="cls-1" cx="252.11" cy="307.5" rx="5.5" ry="7"/>
+          <path class="cls-2" d="M308.61,367.5s-16,19-51-5"/>
+        </g>
+      </g>
+      <circle class="cls-2" cx="277.5" cy="277.5" r="275"/>
+    </g>
+  </g>
+</svg>
