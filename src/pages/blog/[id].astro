@@ -1,0 +1,18 @@
+---
+import PostLayout from "../../layouts/PostLayout.astro";
+
+export function getStaticPaths() {
+  return [
+    {params: {id: 'mv3ij0q1392w'}},
+    {params: {id: 'zhwr8f_ewwm'}},
+    {params: {id: 'f3t6fojup8o'}},
+  ];
+}
+
+const { id } = Astro.params;
+---
+
+
+<PostLayout>
+  <p>ブログの詳細ページ</p>
+</PostLayout>

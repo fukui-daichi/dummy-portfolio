@@ -11,7 +11,6 @@ const last_posts = posts.slice(0, 3);
 
 // microCMSから情報をインポート
 const response = await getBlogs({ fields: ['id', 'title', 'mainVisual', 'content']});
-console.log(response);
 ---
 
 <BaseLayout sideBarActiveItemID="home">
@@ -64,7 +63,7 @@ console.log(response);
           <li>
             <HorizontalCard
               title={blog.title}
-              url={"/blog/" + createSlug(blog.title, blog.slug)}
+              url={`/blog/${blog.id}`}
               img={blog.mainVisual?.url || '/post_img.webp'}
             />
           </li>
