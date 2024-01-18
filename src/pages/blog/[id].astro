@@ -1,5 +1,6 @@
 ---
 import PostLayout from "../../layouts/PostLayout.astro";
+import { getBlogDetail } from "../../lib/microcms"
 
 export function getStaticPaths() {
   return [
@@ -10,9 +11,18 @@ export function getStaticPaths() {
 }
 
 const { id } = Astro.params;
+const blog = await getBlogDetail(id)
+console.log(blog);
+console.log(blog.content);
+
+
 ---
 
 
-<PostLayout>
-  <p>ブログの詳細ページ</p>
+<PostLayout
+  title={blog.title}
+  description={blog.content}
+  pubDate={blog.publishedAt}
+  >
 </PostLayout>
+<!-- heroImage={blog.heroImage} -->
