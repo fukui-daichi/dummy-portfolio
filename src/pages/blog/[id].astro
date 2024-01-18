@@ -12,17 +12,16 @@ export function getStaticPaths() {
 
 const { id } = Astro.params;
 const blog = await getBlogDetail(id)
-console.log(blog);
-console.log(blog.content);
-
+// console.log(blog);
 
 ---
-
 
 <PostLayout
   title={blog.title}
   description={blog.content}
   pubDate={blog.publishedAt}
+  heroImage={blog.heroImage?.url || '/post_img.webp'}
+  updatedDate={blog.updatedAt}
   >
 </PostLayout>
 <!-- heroImage={blog.heroImage} -->
