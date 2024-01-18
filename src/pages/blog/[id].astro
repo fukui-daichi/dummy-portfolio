@@ -1,17 +1,18 @@
 ---
 import PostLayout from "../../layouts/PostLayout.astro";
-import { getBlogDetail } from "../../lib/microcms"
+import { getBlogDetail, getBlogs } from "../../lib/microcms"
 
-export function getStaticPaths() {
-  return [
-    {params: {id: 'mv3ij0q1392w'}},
-    {params: {id: 'zhwr8f_ewwm'}},
-    {params: {id: 'f3t6fojup8o'}},
-  ];
+export async function getStaticPaths() {
+  const response = await getBlogs({ fields: ['id']});
+  return response.contents.map((blog: any) =>({
+    params: {
+      id: blog.id,
+    },
+  }));
 }
 
 const { id } = Astro.params;
-const blog = await getBlogDetail(id)
+const blog = await getBlogDetail(id) || {};
 // console.log(blog);
 
 ---
@@ -24,4 +25,3 @@ const blog = await getBlogDetail(id)
   updatedDate={blog.updatedAt}
   >
 </PostLayout>
-<!-- heroImage={blog.heroImage} -->

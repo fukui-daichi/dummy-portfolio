@@ -5,12 +5,13 @@ import { getCollection } from "astro:content";
 import createSlug from "../lib/createSlug"
 import { getBlogs } from "src/lib/microcms";
 
-const posts = (await getCollection("blog")).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
-
-const last_posts = posts.slice(0, 3);
+// const posts = (await getCollection("blog")).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+// const last_posts = posts.slice(0, 3);
 
 // microCMSから情報をインポート
-const response = await getBlogs({ fields: ['id', 'title', 'heroImage', 'content']});
+const blogs = await getBlogs({ fields: ['id', 'title', 'heroImage', 'content']});
+const lastBlogs = blogs.contents.slice(0, 3);
+
 
 ---
 
@@ -59,7 +60,7 @@ const response = await getBlogs({ fields: ['id', 'title', 'heroImage', 'content'
 
   <ul>
     {
-      response.contents.map((blog: any) => (
+      lastBlogs.map((blog: any) => (
         <>
           <li>
             <HorizontalCard
