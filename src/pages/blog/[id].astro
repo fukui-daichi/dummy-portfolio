@@ -22,6 +22,6 @@ const blog = await getBlogDetail(id) || {};
   description={blog.content}
   pubDate={blog.publishedAt}
   heroImage={blog.heroImage?.url || '/post_img.webp'}
-  updatedDate={blog.updatedAt}
+  updatedDate={blog.updatedAt !== blog.publishedAt ? blog.updatedAt : undefined}
   >
 </PostLayout>
