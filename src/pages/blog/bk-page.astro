@@ -3,15 +3,12 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import HorizontalCard from "../../components/HorizontalCard.astro";
 import { getCollection } from "astro:content";
 import createSlug from "../../lib/createSlug"
-import { getBlogs } from "../../lib/microcms"
 
 export async function getStaticPaths({ paginate }) {
   const posts = await getCollection("blog");
   posts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
   return paginate(posts, { pageSize: 10 });
 }
-
-const blogs = await getBlogs({ fields: ['id', 'title', 'heroImage', 'content']});
 
 const { page } = Astro.props;
 
@@ -23,33 +20,32 @@ const { page } = Astro.props;
   </div>
 
   {
-    blogs.contents.length === 0 ? (
+    page.data.length === 0 ? (
       <div class="bg-base-200 border-l-4 border-secondary w-full p-4 min-w-full">
-        <p>現在、ブログの投稿はありません。</p>
+        <p class="font-bold">Sorry!</p>
+        <p>There are no blog posts to show at the moment. Check back later!</p>
       </div>
     ) : (
       <ul>
-        {
-          blogs.contents.map((blog: any) => (
-            <>
-              <li>
-                <HorizontalCard
-                  title={blog.title}
-                  url={`/blog/${blog.id}`}
-                  img={blog.heroImage?.url || '/post_img.webp'}
-                  target="_self"
-                />
-              </li>
-              <div class="divider my-0" />
-            </>
-          ))
-        }
+        {page.data.map((post) => (
+          <>
+            <HorizontalCard
+              title={post.data.title}
+              img={post.data.heroImage}
+              desc={post.data.description}
+              url={"/blog/" + createSlug(post.data.title, post.slug)}
+              target="_self"
+              badge={post.data.badge}
+              tags={post.data.tags}
+            />
+            <div class="divider my-0" />
+          </>
+        ))}
       </ul>
     )
   }
 
-  <!-- ページネーション -->
-  <!-- <div class="flex justify-between">
+  <div class="flex justify-between">
     {
       page.url.prev ? (
         <a href={page.url.prev} class="btn btn-ghost my-10 mx-5">
@@ -88,5 +84,5 @@ const { page } = Astro.props;
         <div />
       )
     }
-  </div> -->
+  </div>
 </BaseLayout>
