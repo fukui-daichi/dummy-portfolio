@@ -10,7 +10,7 @@ import { getBlogs } from "src/lib/microcms";
 
 // microCMSから情報をインポート
 const blogs = await getBlogs({ fields: ['id', 'title', 'heroImage', 'content']});
-const lastBlogs = blogs.contents.slice(0, 3);
+const lastBlogs = blogs.contents.slice(0, 5);
 
 
 ---

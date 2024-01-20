@@ -1,7 +1,4 @@
-// Place any global data in this file.
-// You can import this data from anywhere in your site by using the `import` keyword.
-
-export const SITE_TITLE = 'Portfolio | Daichi Fukui';
-export const SITE_DESCRIPTION = 'ポートフォリオ';
+export const SITE_TITLE = 'Home';
+export const SITE_DESCRIPTION = 'Daichi Fukuiのポートフォリオ';
 export const GENERATE_SLUG_FROM_TITLE = true
 export const TRANSITION_API = true
